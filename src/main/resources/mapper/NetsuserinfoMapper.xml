@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springboot_test_3.dao.NetsuserinfoDao" >
+  <resultMap id="BaseResultMap" type="com.example.springboot_test_3.entity.Netsuserinfo" >
+    <id column="uitID" property="uitID" jdbcType="INTEGER" />
+    <result column="uitName" property="uitName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    uitID,uitName
+  </sql>
+  <select id="findAll" resultType="com.example.springboot_test_3.entity.Netsuserinfo">
+  	select uitID,uitName from corenets_netsuserinfo
+  </select>
+</mapper>
