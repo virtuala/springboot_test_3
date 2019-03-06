@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.example.springboot_test_3.dao")
-public class SpringbootTest2Application {
+public class SpringbootTest3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootTest2Application.class, args);
+		SpringApplication.run(SpringbootTest3Application.class, args);
 	}
 
 }

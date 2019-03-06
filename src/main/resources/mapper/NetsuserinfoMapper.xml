@@ -9,6 +9,6 @@
     uitID,uitName
   </sql>
   <select id="findAll" resultType="com.example.springboot_test_3.entity.Netsuserinfo">
-  	select uitID,uitName from corenets_netsuserinfo
+  	select uitID,uitName,uictContent from corenets_netsuserinfo AS A INNER JOIN corenets_netsuserinfocont AS B ON B.uictIndexID=A.uitID;
   </select>
 </mapper>
