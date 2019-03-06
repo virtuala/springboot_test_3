@@ -44,7 +44,7 @@ public class SpringbootTest3Application {
      
     @RequestMapping("/hi")
     public String sayHi(String name){
-        return "hi" + port + ";name"+name;
+        return "hi:" + port + ";name:"+name;
     }
     @RequestMapping("/actuator/info")
     public List<ServiceInstance> serviceInstancesByApplicationName() {
