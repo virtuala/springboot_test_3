@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableEurekaClient
+@EnableFeignClients
 @RestController
 @MapperScan("com.example.springboot_test_3.dao")
 public class SpringbootTest3Application {
@@ -31,17 +33,11 @@ public class SpringbootTest3Application {
 		SpringApplication.run(SpringbootTest3Application.class, args);
 	}
 
-    @Bean
-    @LoadBalanced
-    RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
     @Value("${server.port}")
     String port;
     @Value("${spring.application.name}")
     String application_name;
-     
+    
     @RequestMapping("/hi")
     public String sayHi(String name){
         return "hi:" + port + ";name:"+name;
